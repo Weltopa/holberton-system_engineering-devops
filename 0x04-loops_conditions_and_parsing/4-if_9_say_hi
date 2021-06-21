@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This is a bash script to display 10 times with iteration of hi after 9th line"
 x=0
-while [ $x -le 10 ]
+while [ $x -lt 10 ]
 do
   echo "Holberton School"
   x=$(( x + 1 ))
