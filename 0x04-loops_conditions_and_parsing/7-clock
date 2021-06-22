@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This is a script that displays time to hour then minutes.
+i=0
+while [ $i -le 12]
+do 
+  echo "Hour: $i"
+  x=0
+  while [ $x -le 59]
+    echo "$x"
+    x=$(( x + 1 ))
+  i=$(( i + 1 ))
+done
