@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This is a Bash scrpit PID, along with process name.
+pgrep -l bash
