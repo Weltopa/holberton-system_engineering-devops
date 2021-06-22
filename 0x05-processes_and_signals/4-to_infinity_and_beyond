@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This is a Bash script that display pattern indefintely.
-while [ true ]
+while true 
 do 
 	echo "To infinity and beyond" 
 	sleep 2
