@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-# This is a Bash script that kills previous loop"
-kill "$( pgrep -f 4-to_infinity_and_beyond )"
+# This is a Bash script that kills previous loop.
+kill "$(pgrep -f 4-to_infinity_and_beyond)"
+
