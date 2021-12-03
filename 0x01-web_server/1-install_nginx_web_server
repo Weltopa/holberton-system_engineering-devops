@@ -6,4 +6,4 @@ sudo ufw default allow
 sudo ufw allow 'Nginx HTTP'
 echo y | sudo ufw enable
 sudo sh -c 'echo "Hello World" > /var/www/html/index.html'
-service nginx start
+sudo service nginx restart
