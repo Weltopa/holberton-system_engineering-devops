@@ -9,6 +9,6 @@ sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
 error="error_page 404 /404.html;\nlocation = /404.html {\nroot /var/www/html;\ninternal;\n}"
 sudo sed -i "25i $error" /etc/nginx/sites-enabled/default
 sudo sh -c 'echo "Hello World" > /var/www/html/index.html'
-sudo sed -i '/listen 80 default_server;/a add_header X-Served-By $HOSTNAME;' /etc/nginx/sites-available/default
 sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.zombo.com permanent;' /etc/nginx/sites-available/default
+sudo sed -i '/listen 80 default_server;/a add_header X-Served-By $HOSTNAME;' /etc/nginx/sites-available/default
 sudo service nginx restart
