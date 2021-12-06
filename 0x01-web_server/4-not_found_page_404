@@ -5,9 +5,9 @@ sudo apt-get -y install nginx
 sudo ufw default allow
 sudo ufw allow 'Nginx HTTP'
 echo y | sudo ufw enable
-touch /var/www/html/404.html
-echo "Ceci n'est pas une page" > /var/www/html/404/html
-error_page 404 /error404.html;
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+error="error_page 404 /404.html;\nlocation = /404.html {\nroot /var/www/html;\ninternal;\n}"
+sudo sed -i "25i $error" /etc/nginx/sites-enabled/default
 sudo sh -c 'echo "Hello World" > /var/www/html/index.html'
 sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.zombo.com permanent;' /etc/nginx/sites-available/default
-service nginx start
+sudo service nginx restart
