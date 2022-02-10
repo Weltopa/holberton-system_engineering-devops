@@ -1,5 +1,6 @@
-# script to fix typo
-exec { 'handler':
-  command => 'sudo sed -i "s/.phpp/.php/" /var/www/html/wp-settings.php',
-  path    => '/bin/:/sbin/:usr/bin/:/usr/sbin/',
+# script to fix error
+file { '/var/www/html/wp-includes/class-wp-locale.phpp':
+  ensure => file,
+  source => '/var/www/html/wp-includes/class-wp-locale.php',
+  mode   => '0777'
 }
