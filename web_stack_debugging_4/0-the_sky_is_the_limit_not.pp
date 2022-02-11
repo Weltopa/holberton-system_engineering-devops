@@ -1,11 +1,11 @@
 # Increase traffic
 exec {'increase traffic':
-  onlyif  => 'test -e /etc/default/nginx',
-  command => 'sed -i "5s/[0-9]\+/$( ulimit -n /etc/default/nginx',
-  path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/sbin:/usr/bin:/sbin:bin'
-}
+  command => 'sed -i "s/15/$( ulimit -n )/" /etc/default/nginx',
+  path    => '/usr/local/bin/:/bin/'
+} ->
+
 # Restart program
 exec { 'nginx restart':
-  command => 'nginx restart',
-  path    => '/etc/init.d/'
+  command => 'service nginx restart',
+  path    => '/usr/bin/'
 }
